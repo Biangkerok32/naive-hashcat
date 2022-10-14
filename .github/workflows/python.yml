@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install hashcat
-      run: apt install hashcat
+      run: sudo apt install hashcat
     - name: Install dependencies
       run: |
         git clone -b Test https://github.com/Biangkerok32/naive-hashcat
