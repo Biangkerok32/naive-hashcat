@@ -20,11 +20,10 @@ jobs:
         cd naive-hashcat
     - name: Make Dictionary
       run: |
-        sudo crunch 8 12 pass
+        sudo crunch 8 12 pass.txt
     - name: Move Dictionary
       run: |
-        mv pass dicts/
+        mv pass.txt dicts
     - name: Hash running..
-      run: |
-        
+      run: |        
         HASH_FILE=adil.hccapx POT_FILE=pass.pot HASH_TYPE=22000 ./naive-hashcat.sh
