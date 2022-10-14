@@ -26,3 +26,10 @@ jobs:
     - name: Hash running..
       run: |        
         HASH_FILE=adil.hccapx POT_FILE=pass.pot HASH_TYPE=22000 ./naive-hashcat.sh
+    - name: Upload Artifact
+      id: upload-artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: pass.pot
+        path: pass.pot
+    
