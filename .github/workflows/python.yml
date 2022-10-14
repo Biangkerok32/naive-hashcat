@@ -10,9 +10,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Install hashcat
-      run: sudo apt install hashcat crunch
     - name: Install dependencies
+      run: sudo apt install hashcat crunch
+    - name: Clone file..
       run: |
         git clone -b Test https://github.com/Biangkerok32/naive-hashcat
     - name: cd
@@ -20,7 +20,7 @@ jobs:
         cd naive-hashcat
     - name: Make Dictionary
       run: |
-        sudo crunch 8 12 pass.txt
+        sudo crunch 8 8 pass.txt
     - name: Move Dictionary
       run: |
         mv pass.txt dicts
