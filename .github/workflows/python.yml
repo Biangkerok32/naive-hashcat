@@ -22,7 +22,7 @@ jobs:
         sudo crunch 8 8 pass.txt
     - name: Move Dictionary
       run: |
-        mv pass.txt dicts
+        mv pass.txt dicts/
     - name: Hash running..
       run: |        
         HASH_FILE=adil.hccapx POT_FILE=pass.pot HASH_TYPE=22000 ./naive-hashcat.sh
