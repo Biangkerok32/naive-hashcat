@@ -11,13 +11,19 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install hashcat
-      run: sudo apt install hashcat
+      run: sudo apt install hashcat crunch
     - name: Install dependencies
       run: |
         git clone -b Test https://github.com/Biangkerok32/naive-hashcat
     - name: cd
       run: |
         cd naive-hashcat
+    - name: Make Dictionary
+      run: |
+        sudo crunch 8 12 pass
+    - name: Move Dictionary
+      run: |
+        mv pass dicts/
     - name: Hash running..
       run: |
         
